@@ -1,0 +1,119 @@
+.lantern {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  animation: swing 3s ease-in-out infinite;
+}
+
+.lantern-left {
+  left: 20px;
+}
+
+.lantern-right {
+  right: 20px;
+}
+
+.lantern-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lantern-top {
+  width: 45px;
+  height: 10px;
+  background: linear-gradient(90deg, var(--cny-gold-dark), var(--cny-gold), var(--cny-gold-dark));
+  border-radius: 5px 5px 0 0;
+}
+
+.lantern-middle {
+  width: 55px;
+  height: 70px;
+  background: linear-gradient(180deg, #ff3333 0%, var(--cny-red) 50%, var(--cny-red-dark) 100%);
+  border-radius: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: var(--cny-gold);
+  font-weight: bold;
+  box-shadow: 0 0 30px rgba(222, 41, 16, 0.7), inset 0 0 20px rgba(255, 255, 255, 0.1);
+  position: relative;
+  animation: lantern-glow 2s ease-in-out infinite;
+}
+
+@keyframes lantern-glow {
+  0%, 100% { box-shadow: 0 0 30px rgba(222, 41, 16, 0.7), inset 0 0 20px rgba(255, 255, 255, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(255, 100, 50, 0.9), inset 0 0 25px rgba(255, 255, 255, 0.2); }
+}
+
+.lantern-middle::before,
+.lantern-middle::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 4px;
+  background: var(--cny-gold);
+}
+
+.lantern-middle::before {
+  top: 8px;
+}
+
+.lantern-middle::after {
+  bottom: 8px;
+}
+
+.lantern-bottom {
+  width: 45px;
+  height: 10px;
+  background: linear-gradient(90deg, var(--cny-gold-dark), var(--cny-gold), var(--cny-gold-dark));
+  border-radius: 0 0 5px 5px;
+}
+
+.lantern-tassel {
+  width: 4px;
+  height: 30px;
+  background: linear-gradient(180deg, var(--cny-gold) 0%, var(--cny-red) 100%);
+  position: relative;
+}
+
+.lantern-tassel::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 20px;
+  background: var(--cny-red);
+  border-radius: 0 0 6px 6px;
+}
+
+@keyframes swing {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@media (max-width: 768px) {
+  .lantern-middle {
+    width: 40px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .lantern-top,
+  .lantern-bottom {
+    width: 32px;
+  }
+
+  .lantern-left {
+    left: 10px;
+  }
+
+  .lantern-right {
+    right: 10px;
+  }
+}

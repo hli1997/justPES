@@ -1,0 +1,143 @@
+.result-section {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.result-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cny-red), var(--cny-gold), var(--cny-red));
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--cny-gold);
+}
+
+.result-header h2 {
+  font-size: 1.3rem;
+  color: var(--cny-gold);
+  margin: 0;
+}
+
+.result-count {
+  background: var(--cny-red);
+  color: var(--cny-gold);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* 桌面端表格 */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+  background: linear-gradient(135deg, var(--grass-green) 0%, var(--grass-light) 100%);
+  color: white;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+tr:hover {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+/* 移动端卡片 */
+.mobile-cards {
+  display: none;
+}
+
+.player-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 4px solid var(--cny-gold);
+}
+
+.player-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.player-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--cny-gold);
+}
+
+.player-type {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: var(--grass-green);
+}
+
+.player-card-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.player-info-item {
+  display: flex;
+  gap: 5px;
+}
+
+.player-info-item .label {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  /* 隐藏桌面表格，显示卡片 */
+  .desktop-table {
+    display: none;
+  }
+
+  .mobile-cards {
+    display: block;
+  }
+
+  .result-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .player-card-body {
+    grid-template-columns: 1fr;
+  }
+}

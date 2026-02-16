@@ -1,0 +1,41 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 80px;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  margin-top: 30px;
+  color: var(--text-secondary);
+}
+
+.footer p {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.footer .credits {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.footer .credits a {
+  color: var(--cny-gold);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.footer .credits a:hover {
+  color: var(--cny-gold-light);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    padding-top: 100px;
+  }
+}

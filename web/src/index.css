@@ -1,0 +1,71 @@
+/* ===== 基础样式 & 变量 ===== */
+:root {
+  /* 新年主题色 - 更喜庆 */
+  --cny-red: #de2910;
+  --cny-red-dark: #a31621;
+  --cny-red-light: #ff4d4d;
+  --cny-gold: #ffd700;
+  --cny-gold-dark: #daa520;
+  --cny-gold-light: #ffe44d;
+
+  /* 足球主题色 */
+  --grass-green: #2d5a27;
+  --grass-light: #4a7c43;
+  --field-line: rgba(255, 255, 255, 0.3);
+
+  /* 喜庆背景 */
+  --bg-primary: #1a0a0a;
+  --bg-secondary: #2d1515;
+  --bg-card: rgba(139, 0, 0, 0.3);
+  --text-primary: #ffffff;
+  --text-secondary: #ffcccc;
+  --border-radius: 12px;
+  --shadow: 0 4px 20px rgba(222, 41, 16, 0.3);
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-primary);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at top left, rgba(222, 41, 16, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ===== 滚动条美化 ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cny-red);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cny-red-dark);
+}
