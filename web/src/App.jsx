@@ -209,7 +209,6 @@ export default function App() {
         />
         <ResultPanel players={filteredPlayers} />
         <footer className="footer">
-          <p>🧧 JustPES 球员搜索 · 2025春节版 🧧</p>
           <p className="credits">
             数据来源感谢 <a href="https://github.com/nGnIJM" target="_blank" rel="noopener noreferrer">@nGnIJM</a>
           </p>
